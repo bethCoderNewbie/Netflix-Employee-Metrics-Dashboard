@@ -1,73 +1,16 @@
-import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+# Dependencies
+/node_modules
 
-const data = [
-  { name: 'Q1', engagement: 7.5, training: 65, productivity: 85 },
-  { name: 'Q2', engagement: 8.0, training: 72, productivity: 88 },
-  { name: 'Q3', engagement: 7.8, training: 68, productivity: 90 },
-  { name: 'Q4', engagement: 8.2, training: 75, productivity: 92 },
-];
+# Production build files
+/build
 
-const NetflixEmployeeDashboard = () => {
-  return (
-    <div className="p-4 space-y-4 bg-black text-white">
-      <h1 className="text-2xl font-bold mb-4 text-netflix-red">Netflix Employee Metrics Dashboard</h1>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Card className="bg-netflix-dark-gray border-netflix-red">
-          <CardHeader>
-            <CardTitle className="text-netflix-red">Employee Engagement Scores</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-4xl font-bold">{data[data.length - 1].engagement.toFixed(1)}</div>
-            <div className="text-sm text-gray-400">Latest quarter score (out of 10)</div>
-          </CardContent>
-        </Card>
-        
-        <Card className="bg-netflix-dark-gray border-netflix-red">
-          <CardHeader>
-            <CardTitle className="text-netflix-red">Training Participation</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-4xl font-bold">{data[data.length - 1].training}%</div>
-            <div className="text-sm text-gray-400">Latest quarter participation rate</div>
-          </CardContent>
-        </Card>
-        
-        <Card className="bg-netflix-dark-gray border-netflix-red">
-          <CardHeader>
-            <CardTitle className="text-netflix-red">Employee Productivity</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-4xl font-bold">{data[data.length - 1].productivity}%</div>
-            <div className="text-sm text-gray-400">Latest quarter productivity index</div>
-          </CardContent>
-        </Card>
-      </div>
-      
-      <Card className="bg-netflix-dark-gray border-netflix-red">
-        <CardHeader>
-          <CardTitle className="text-netflix-red">Quarterly Trends</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={data}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-              <XAxis dataKey="name" stroke="#fff" />
-              <YAxis yAxisId="left" orientation="left" stroke="#fff" />
-              <YAxis yAxisId="right" orientation="right" stroke="#fff" />
-              <Tooltip contentStyle={{ backgroundColor: '#141414', border: '1px solid #e50914' }} />
-              <Legend wrapperStyle={{ color: '#fff' }} />
-              <Bar yAxisId="left" dataKey="engagement" name="Engagement Score" fill="#e50914" />
-              <Bar yAxisId="right" dataKey="training" name="Training Participation %" fill="#b20710" />
-              <Bar yAxisId="right" dataKey="productivity" name="Productivity Index" fill="#831010" />
-            </BarChart>
-          </ResponsiveContainer>
-        </CardContent>
-      </Card>
-    </div>
-  );
-};
+# Misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-export default NetflixEmployeeDashboard;
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
